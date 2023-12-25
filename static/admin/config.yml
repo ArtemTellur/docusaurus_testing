@@ -15,6 +15,8 @@ collections:
   extension: md
   widget: "list"
   create: true
+  nested:
+    depth: 100
   slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
   fields:
     - { name: title, label: Title, widget: string }
@@ -30,4 +32,4 @@ collections:
         - { name: name, label: Name, widget: string }
         - { name: title, label: Title, widget: string } 
         - { name: url, label: URL, widget: string } 
-        - { name: imageUrl, label: ImageURL, widget: string } 
+        - { name: imageUrl, label: ImageURL, widget: string }
