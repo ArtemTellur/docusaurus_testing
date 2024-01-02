@@ -8,20 +8,17 @@ media_folder: "static/img" # Media files will be stored in the repo under static
 public_folder: "/img/" # The src attribute for uploaded media will begin with /images/uploads
 
 collections:
-- name: docs
-  label: "docs"
-  folder: docs
-  identifier_field: title
-  extension: md
-  widget: "list"
-  create: true
-  nested:
-    { depth: 100 }
-  slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
-  fields:
-    - { name: title, label: Title, widget: string }
-    - { name: body, label: Body, widget: markdown }
-    - { name: slug, label: Slug, widget: string }
-    - label: "Tags"
-      name: "tags"
-      widget: "list"
+  - name: pages
+    label: Pages
+    label_singular: 'Page'
+    folder: source/handbook
+    create: true
+    nested: { depth: 100 } # accepts an optional summary template
+    fields:
+      - label: Title
+        name: title
+        widget: string
+      - label: Body
+        name: body
+        widget: markdown
+    meta: { path: { widget: string, label: 'Path', index_file: 'index' } }
