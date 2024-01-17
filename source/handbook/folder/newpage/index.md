@@ -1,5 +1,5 @@
 ---
-title: New Page
+title: New Page 1
 ---
 123
 
